@@ -1,9 +1,11 @@
+import os
+
 import streamlit as st
 import requests
 from datetime import datetime
 
-# Define your News API key
-api_key = 'c9b2ff3e3bc84129a63613e46623d585'
+# NewsAPI key, read from the environment so it never lands in source control
+api_key = os.environ.get('NEWS_API_KEY', '')
 
 # Define a function to fetch the latest news articles
 def fetch_latest_news():
